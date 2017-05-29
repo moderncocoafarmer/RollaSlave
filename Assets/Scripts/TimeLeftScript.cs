@@ -30,7 +30,7 @@ public class TimeLeftScript : MonoBehaviour {
         {
             endReached = true;
             endGameDialog.SetActive(true);
-            endGameDialog.GetComponent<EndGameScript>().ShowDialog("The newspapers will print the story of Nestle's involvement in child slavery.");
+            endGameDialog.GetComponent<EndGameScript>().ShowDialog("Tomorrow the newspapers will print the story of Nestle's involvement in child slavery.");
         }
 
         timerText.text = ((int)TimeForLevel).ToString();
