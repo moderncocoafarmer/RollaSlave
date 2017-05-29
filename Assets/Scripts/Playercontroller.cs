@@ -7,9 +7,14 @@ public class Playercontroller : MonoBehaviour {
 	public float speed;
 	//a YES/NO if we're on mobile or not
 	public bool isMobile;
+
 	//the current score the player has
 	private int score;
-	//the top score OR the number of children we've found
+    public int Score { get { return score; } }
+
+    public int MaxPickupsCount { get; private set; }
+	
+    //the top score OR the number of children we've found
 	private int topScore;
 	//the parent objects of all the pickups
 	public GameObject pickups;
@@ -18,8 +23,10 @@ public class Playercontroller : MonoBehaviour {
 
 	void Start ()
 	{
-		//if we've said this isMobile
-		if (isMobile) {
+        MaxPickupsCount = GameObject.Find("Pick Ups").transform.childCount;
+
+        //if we've said this isMobile
+        if (isMobile) {
 			//set the screen to landscape
 			Screen.orientation = ScreenOrientation.LandscapeLeft;
 			//set it to not full screen so we can use software-android buttons
@@ -59,6 +66,7 @@ public class Playercontroller : MonoBehaviour {
 		if (other.gameObject.CompareTag("Pick Up")) {
 			//turn it off!
 			other.gameObject.SetActive (false);
+            score++;
 		}
 	}
 }
