@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class TimeLeftScript : MonoBehaviour {
 
-    private float TimeForLevel = 60;
+    private float TimeForLevel = 50;
 
     private GameObject endGameDialog;
     private Text timerText;
